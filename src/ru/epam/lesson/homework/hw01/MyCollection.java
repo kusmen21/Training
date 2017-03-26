@@ -1,31 +1,11 @@
-package lessons.homework.hw01;
+package ru.epam.lesson.homework.hw01;
 
 public class MyCollection<E>
 {	
 	private Entry<E> firstElement;
 	private Entry<E> lastElement;
 	private int size = 0;		
-	
-	public static void main(String[] args)
-	{		
-		MyCollection<String> collection = new MyCollection<>();
-		collection.addLast("last");
-		collection.addFirst("first");	
-		collection.addLast("again_last");			
-		collection.addFirst("again_first");
-		collection.addMiddle("middle");
-		collection.addFirst("fifth_to_begin");	
-		
-		collection.print();
-		
-		System.out.println("\ncontains \"first\" = " + collection.contains("first"));
-		System.out.println("contains \"second\" = " + collection.contains("second"));
-		
-		collection.remove("again_first");
-		System.out.println();
-		collection.print();
-	}
-	
+			
 	public void addFirst(E element)
 	{
 		Entry<E> entry = new Entry<>(element);
@@ -85,8 +65,7 @@ public class MyCollection<E>
 			{
 				beforeMiddle = toMiddle;
 				toMiddle = toMiddle.getNext();
-			}
-			
+			}			
 			entry.setNext(toMiddle);
 			entry.setNumber(toMiddle.getNumber());
 			if (size > 1) beforeMiddle.setNext(entry);
@@ -160,6 +139,7 @@ public class MyCollection<E>
 		return size;
 	}
 	
+	// инкрементирование позиций элементов после вставленного
 	private void incrementNumbers(Entry<E> from)
 	{
 		Entry<E> toIncrement = from.getNext();
@@ -170,6 +150,7 @@ public class MyCollection<E>
 		}
 	}
 	
+	// декрементирование позиций элементов после удаленного
 	private void decrementNumbers(Entry<E> from)
 	{
 		Entry<E> toDecrement = from;
@@ -180,11 +161,11 @@ public class MyCollection<E>
 		}
 	}
 
-	protected static class Entry<E>
+	private static class Entry<E>
 	{
-		E data;
-		Entry<E> next;
-		int number;
+		private E data;
+		private Entry<E> next;
+		private int number;
 		
 		public Entry(E data) 
 		{			
@@ -203,11 +184,7 @@ public class MyCollection<E>
 
 		public E getData() {
 			return data;
-		}
-
-		public void setData(E data) {
-			this.data = data;
-		}
+		}		
 
 		public Entry<E> getNext() {
 			return next;
@@ -221,9 +198,5 @@ public class MyCollection<E>
 		public String toString() {
 			return "Entry [number=" + number + ", data=" + data + "]";
 		}
-
 	}
-
-	
-	
 }
