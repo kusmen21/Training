@@ -1,4 +1,4 @@
-package ru.epam.lesson.homework.hw01;
+package ru.epam.lesson.homework.hw01.copy;
 
 
 public class Aggregator 

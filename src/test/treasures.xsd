@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com"
+           xmlns="http://www.example.com"
+           elementFormDefault="qualified">
+    <xs:element name="treasures" >
+
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="jewel" type="jewel_type" maxOccurs="3" />
+                <xs:element name="ring" type="ring_type" maxOccurs="3" />
+                <xs:element name="bracelet" type="bracelet_type" maxOccurs="3" />
+                <xs:element name="chain" type="chain_type" maxOccurs="3" />
+                <xs:element name="sandglass" type="sandglass_type" maxOccurs="3" />
+                <xs:element name="beads" type="beads_type" maxOccurs="3" />
+                <xs:element name="coulomb" type="coulomb_type" maxOccurs="3" />
+                <xs:element name="cup" type="cup_type" maxOccurs="3" />
+                <xs:element name="vase" type="vase_type" maxOccurs="3" />
+                <xs:element name="statue" type="statue_type" maxOccurs="3" />
+                <xs:element name="picture" type="picture_type" maxOccurs="3" />
+                <xs:element name="casket" type="casket_type" maxOccurs="3" />
+                <xs:element name="key" type="key_type" maxOccurs="3" />
+                <xs:element name="sword" type="sword_type" maxOccurs="3" />
+                <xs:element name="staff" type="staff_type" maxOccurs="3" />
+                <xs:element name="mace" type="mace_type" maxOccurs="3" />
+                <xs:element name="axe" type="axe_type" maxOccurs="3" />
+                <xs:element name="bow" type="bow_type" maxOccurs="3" />
+                <xs:element name="helmet" type="helmet_type" maxOccurs="3" />
+                <xs:element name="spaulders" type="spaulders_type" maxOccurs="3" />
+                dospeh
+                <xs:element name="trousers" type="trousers_type" maxOccurs="3" />
+                <xs:element name="boots" type="boots_type" maxOccurs="3" />
+                <xs:element name="ancient_book" type="ancient_book_type" maxOccurs="3" />
+                <xs:element name="ancient_scroll" type="ancient_scroll_type" maxOccurs="3" />
+                <xs:element name="magicstone" type="magicstone_type" maxOccurs="3" />
+                <xs:element name="runicstone" type="runicstone_type" maxOccurs="3" />
+                <xs:element name="ancientfossil" type="ancientfossil_type" maxOccurs="3" />
+                <xs:element name="dragonsegg" type="dragonsegg_type" maxOccurs="3" />
+                drevnyaa tkan
+                <xs:element name="aroma" type="aroma_type" maxOccurs="3" />
+                <xs:element name="princess" type="princess_type" maxOccurs="3" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="jewel_type">
+        <xs:sequence>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="diameter" type="xs:double"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="ring_type">
+        <xs:sequence>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="style" type="xs:string"/>
+            <xs:element name="hasPreciousStone" type="xs:boolean"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="bracelet_type">
+        <xs:sequence>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="style" type="xs:string"/>
+            <xs:element name="girth" type="xs:double"/>
+            <xs:element name="hardness" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="chain_type">
+        <xs:sequence>
+            <xs:element name="length" type="xs:double"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="thickness" type="xs:double"/>
+            <xs:element name="type_of_lock" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="sandglass_type">
+        <xs:sequence>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="sand_type" type="xs:string"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="beads_type">
+        <xs:sequence>
+            <xs:element name="length" type="xs:double"/>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="thickness" type="xs:double"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="coulomb_type">
+        <xs:sequence>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="size" type="xs:double"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="form" type="xs:string"/>
+            <xs:element name="picture" type="xs:boolean"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="cup_type">
+        <xs:sequence>
+            <xs:element name="amount" type="xs:int"/>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="height" type="xs:double"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="vase_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="volume" type="xs:int"/>
+            <xs:element name="hasImage" type="xs:boolean"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="statue_type">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="size" type="xs:int"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="creationdate" type="xs:string"/>
+            <xs:element name="master" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="picture_type">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="creationdate" type="xs:string"/>
+            <xs:element name="master" type="xs:string"/>
+            <xs:element name="quality" type="xs:int"/>
+            <xs:element name="painttype" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="casket_type">
+        <xs:sequence>
+            <xs:element name="size" type="xs:double"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="hasLock" type="xs:boolean"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="key_type">
+        <xs:sequence>
+            <xs:element name="size" type="xs:double"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="whatOpen" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="sword_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="weight" type="xs:double"/>
+            <xs:element name="length" type="xs:double"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="blade_thickness" type="xs:double"/>
+            <xs:element name="damage" type="xs:double"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="staff_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="length" type="xs:double"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="tip_type" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="mace_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="size" type="xs:double"/>
+            <xs:element name="damage" type="xs:double"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="axe_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="type_handle" type="xs:string"/>
+            <xs:element name="type_blade" type="xs:string"/>
+            <xs:element name="damage" type="xs:double"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="bow_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="size" type="xs:double"/>
+            <xs:element name="arrow_type" type="xs:string"/>
+            <xs:element name="arrow_count" type="xs:double"/>
+            <xs:element name="damage" type="xs:double"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="helmet_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="head_protection" type="xs:double"/>
+            <xs:element name="head_circumference" type="xs:double"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="spaulders_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="shoulderGirth" type="xs:double"/>
+            <xs:element name="protection" type="xs:int"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="trousers_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="leg_protection" type="xs:boolean"/>
+            <xs:element name="leg_girth" type="xs:boolean"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="boots_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="material" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="leg_protection" type="xs:boolean"/>
+            <xs:element name="leg_girth" type="xs:boolean"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="ancient_book_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="age" type="xs:int"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="pages" type="xs:double"/>
+            <xs:element name="lanquage" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="ancient_scroll_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="age" type="xs:int"/>
+            <xs:element name="content" type="xs:string"/>
+            <xs:element name="school_of_magic" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="magicstone_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="age" type="xs:int"/>
+            <xs:element name="magicwords" type="xs:string"/>
+            <xs:element name="translation" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="runicstone_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="amountrune" type="xs:int"/>
+            <xs:element name="engravedrune" type="xs:string"/>
+            <xs:element name="translation" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="ancientfossil_type">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="age" type="xs:double"/>
+            <xs:element name="accessory" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="dragonsegg_type">
+        <xs:sequence>
+            <xs:element name="size" type="xs:int"/>
+            <xs:element name="dragonskind" type="xs:string"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="aroma_type">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="count" type="xs:int"/>
+            <xs:element name="price" type="xs:double"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="princess_type">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="age" type="xs:int"/>
+            <xs:element name="damnation" type="xs:boolean"/>
+            <xs:element name="birthplace" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+    </xs:complexType>
+
+</xs:schema>

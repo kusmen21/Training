@@ -1,22 +1,16 @@
-package ru.epam.lesson.homework.hw03.bean.cooking_device.oven.multivariate;
+package ru.epam.lesson.homework.hw03.bean.cooking_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.oven.Oven;
 
 public class Multivariate extends Oven
 {
-	// количество встроенных программ
-	protected int programCount;
+	private int programCount;
 	
-	public Multivariate(String model, int power, Brand brand, int maxFoodWeight, int programCount) {
-		super(model, power, brand, maxFoodWeight);
+	public Multivariate(String model, int power, Brand brand, int maxFoodWeight, int maxTemperature, int programCount) {
+		super(model, power, brand, maxFoodWeight, maxTemperature);
 		this.programCount = programCount;
-	}
+	}	
 	
-	public void cookVegetables(){
-		System.out.println("Cooking Vegetables in Multivariate Oven");
-	}
-
 	public int getProgramCount() {
 		return programCount;
 	}
@@ -49,7 +43,10 @@ public class Multivariate extends Oven
 
 	@Override
 	public String toString() {
-		return "Multivariate [maxFoodWeight=" + maxFoodWeight + ", model=" + model + ", power=" + power + ", brand="
-				+ brand + ", programCount=" + programCount + "]";
+		return "Multivariate [programCount=" + programCount + ", MaxTemperature=" + getMaxTemperature()
+				+ ", MaxFoodWeight=" + getMaxFoodWeight() + ", Power=" + getPower() + ", Brand="
+				+ getBrand() + ", Model=" + getModel() + ", On=" + isOn() + "]";
 	}
+
+	
 }

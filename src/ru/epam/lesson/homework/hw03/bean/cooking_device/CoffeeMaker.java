@@ -1,23 +1,16 @@
-package ru.epam.lesson.homework.hw03.bean.cooking_device.coffee_maker;
+package ru.epam.lesson.homework.hw03.bean.cooking_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.CookingDevice;
 
 public class CoffeeMaker extends CookingDevice
-{
-	// давление пара для приготовления кофе
-	protected int pressure;
+{	
+	private int pressure;
 	
-	public CoffeeMaker(String model, int power, Brand brand, int pressure) {
-		super(model, power, brand);
+	public CoffeeMaker(String model, int power, Brand brand, int maxFoodWeight, int pressure) {
+		super(model, power, brand, maxFoodWeight);
 		this.pressure = pressure;
 	}
 	
-	public void doEspresso()
-	{			
-		System.out.println("Doing espresso on Coffee Maker");		
-	}
-
 	public int getPressure() {
 		return pressure;
 	}
@@ -50,7 +43,8 @@ public class CoffeeMaker extends CookingDevice
 
 	@Override
 	public String toString() {
-		return "CoffeeMaker [model=" + model + ", power=" + power + ", brand=" + brand + ", pressure=" + pressure + "]";
+		return "CoffeeMaker [pressure=" + pressure + ", MaxFoodWeight=" + getMaxFoodWeight() + ", Power="
+				+ getPower() + ", Brand=" + getBrand() + ", Model=" + getModel() + ", On=" + isOn() + "]";
 	}
 
 	

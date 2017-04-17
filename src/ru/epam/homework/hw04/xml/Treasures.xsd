@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.epam.tr.com/schema"
+        xmlns:tns="http://www.epam.tr.com/schema">
+
+    <element name="treasures" >
+        <complexType>
+            <sequence>
+                <element name="jewel" type="tns:jewel_type" maxOccurs="3" />
+                <element name="ring" type="tns:ring_type" maxOccurs="3" />
+                <element name="bracelet" type="tns:bracelet_type" maxOccurs="3" />
+                <element name="chain" type="tns:chain_type" maxOccurs="3" />
+                <element name="sandglass" type="tns:sandglass_type" maxOccurs="3" />
+                <element name="beads" type="tns:beads_type" maxOccurs="3" />
+                <element name="coulomb" type="tns:coulomb_type" maxOccurs="3" />
+                <element name="cup" type="tns:cup_type" maxOccurs="3" />
+                <element name="vase" type="tns:vase_type" maxOccurs="3" />
+                <element name="statue" type="tns:statue_type" maxOccurs="3" />
+                <element name="picture" type="tns:picture_type" maxOccurs="3" />
+                <element name="casket" type="tns:casket_type" maxOccurs="3" />
+                <element name="key" type="tns:key_type" maxOccurs="3" />
+                <element name="sword" type="tns:sword_type" maxOccurs="3" />
+                <element name="staff" type="tns:staff_type" maxOccurs="3" />
+                <element name="mace" type="tns:mace_type" maxOccurs="3" />
+                <element name="axe" type="tns:axe_type" maxOccurs="3" />
+                <element name="bow" type="tns:bow_type" maxOccurs="3" />
+                <element name="helmet" type="tns:helmet_type" maxOccurs="3" />
+                <element name="spaulders" type="tns:spaulders_type" maxOccurs="3" />
+                <!--dospeh-->
+                <element name="trousers" type="tns:trousers_type" maxOccurs="3" />
+                <element name="boots" type="tns:boots_type" maxOccurs="3" />
+                <element name="ancient_book" type="tns:ancient_book_type" maxOccurs="3" />
+                <element name="ancient_scroll" type="tns:ancient_scroll_type" maxOccurs="3" />
+                <element name="magicstone" type="tns:magicstone_type" maxOccurs="3" />
+                <element name="runicstone" type="tns:runicstone_type" maxOccurs="3" />
+                <element name="ancientfossil" type="tns:ancientfossil_type" maxOccurs="3" />
+                <element name="dragonsegg" type="tns:dragonsegg_type" maxOccurs="3" />
+                <!--drevnyaa tkan-->
+                <element name="aroma" type="tns:aroma_type" maxOccurs="3" />
+                <element name="princess" type="tns:princess_type" maxOccurs="3" />
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="jewel_type">
+        <sequence>
+            <element name="type" type="string"/>
+            <element name="material" type="string"/>
+            <element name="diameter" type="double"/>
+            <element name="weight" type="double"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="ring_type">
+        <sequence>
+            <element name="material" type="string"/>
+            <element name="weight" type="double"/>
+            <element name="style" type="string"/>
+            <element name="hasPreciousStone" type="boolean"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="bracelet_type">
+        <sequence>
+            <element name="material" type="string"/>
+            <element name="weight" type="double"/>
+            <element name="style" type="string"/>
+            <element name="girth" type="double"/>
+            <element name="hardness" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="chain_type">
+        <sequence>
+            <element name="length" type="double"/>
+            <element name="weight" type="double"/>
+            <element name="material" type="string"/>
+            <element name="thickness" type="double"/>
+            <element name="type_of_lock" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="sandglass_type">
+        <sequence>
+            <element name="material" type="string"/>
+            <element name="sand_type" type="string"/>
+            <element name="weight" type="double"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="beads_type">
+        <sequence>
+            <element name="length" type="double"/>
+            <element name="material" type="string"/>
+            <element name="weight" type="double"/>
+            <element name="thickness" type="double"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="coulomb_type">
+        <sequence>
+            <element name="material" type="string"/>
+            <element name="size" type="double"/>
+            <element name="weight" type="double"/>
+            <element name="form" type="string"/>
+            <element name="picture" type="boolean"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="cup_type">
+        <sequence>
+            <element name="amount" type="int"/>
+            <element name="material" type="string"/>
+            <element name="weight" type="double"/>
+            <element name="height" type="double"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="vase_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="type" type="string"/>
+            <element name="volume" type="int"/>
+            <element name="hasImage" type="boolean"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="statue_type">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="weight" type="double"/>
+            <element name="size" type="int"/>
+            <element name="type" type="string"/>
+            <element name="creationdate" type="string"/>
+            <element name="master" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="picture_type">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="type" type="string"/>
+            <element name="creationdate" type="string"/>
+            <element name="master" type="string"/>
+            <element name="quality" type="int"/>
+            <element name="painttype" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="casket_type">
+        <sequence>
+            <element name="size" type="double"/>
+            <element name="weight" type="double"/>
+            <element name="hasLock" type="boolean"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="key_type">
+        <sequence>
+            <element name="size" type="double"/>
+            <element name="type" type="string"/>
+            <element name="whatOpen" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="sword_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="material" type="string"/>
+            <element name="weight" type="double"/>
+            <element name="length" type="double"/>
+            <element name="type" type="string"/>
+            <element name="blade_thickness" type="double"/>
+            <element name="damage" type="double"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="staff_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="length" type="double"/>
+            <element name="type" type="string"/>
+            <element name="tip_type" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="mace_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="type" type="string"/>
+            <element name="size" type="double"/>
+            <element name="damage" type="double"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="axe_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="type" type="string"/>
+            <element name="type_handle" type="string"/>
+            <element name="type_blade" type="string"/>
+            <element name="damage" type="double"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="bow_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="type" type="string"/>
+            <element name="size" type="double"/>
+            <element name="arrow_type" type="string"/>
+            <element name="arrow_count" type="int"/>
+            <element name="damage" type="double"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="helmet_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="type" type="string"/>
+            <element name="material" type="string"/>
+            <element name="head_protection" type="double"/>
+            <element name="head_circumference" type="double"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="spaulders_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="material" type="string"/>
+            <element name="type" type="string"/>
+            <element name="shoulderGirth" type="double"/>
+            <element name="protection" type="int"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="trousers_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="material" type="string"/>
+            <element name="type" type="string"/>
+            <element name="leg_protection" type="boolean"/>
+            <element name="leg_girth" type="boolean"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="boots_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="material" type="string"/>
+            <element name="type" type="string"/>
+            <element name="leg_protection" type="boolean"/>
+            <element name="leg_girth" type="boolean"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="ancient_book_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="age" type="int"/>
+            <element name="type" type="string"/>
+            <element name="pages" type="double"/>
+            <element name="lanquage" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="ancient_scroll_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="age" type="int"/>
+            <element name="content" type="string"/>
+            <element name="school_of_magic" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="magicstone_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="type" type="string"/>
+            <element name="age" type="int"/>
+            <element name="magicwords" type="string"/>
+            <element name="translation" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="runicstone_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="type" type="string"/>
+            <element name="amountrune" type="int"/>
+            <element name="engravedrune" type="string"/>
+            <element name="translation" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="ancientfossil_type">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="age" type="double"/>
+            <element name="accessory" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="dragonsegg_type">
+        <sequence>
+            <element name="size" type="int"/>
+            <element name="dragonskind" type="string"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="aroma_type">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="type" type="string"/>
+            <element name="count" type="int"/>
+            <element name="price" type="double"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+    <complexType name="princess_type">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="age" type="int"/>
+            <element name="damnation" type="boolean"/>
+            <element name="birthplace" type="string"/>
+        </sequence>
+        <attribute name="id" type="int" />
+    </complexType>
+
+</schema>

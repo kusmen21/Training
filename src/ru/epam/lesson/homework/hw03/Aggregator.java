@@ -1,77 +1,67 @@
 package ru.epam.lesson.homework.hw03;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.function.Consumer;
 
 import ru.epam.lesson.homework.hw03.bean.ElectronicDevice;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.air_purifier.AirPurifier;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.air_purifier.air_conditioning.AirConditioning;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.vacuum_cleaner.VacuumCleaner;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.vacuum_cleaner.robotic_vacuum_cleaner.RoboticVacuumCleaner;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.vacuum_cleaner.steam_cleaner.SteamCleaner;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.washer.Washer;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.coffee_maker.CoffeeMaker;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.coffee_maker.capsular_coffee_maker.CapsularCoffeeMaker;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.coffee_maker.coffee_machine.CoffeeMachine;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.kitchen_stove.KitchenStove;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.oven.Oven;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.oven.bread_maker.BreadMaker;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.oven.microwave.Microwave;
+import ru.epam.lesson.homework.hw03.bean.cleaning_device.AirConditioning;
+import ru.epam.lesson.homework.hw03.bean.cleaning_device.AirPurifier;
+import ru.epam.lesson.homework.hw03.bean.cleaning_device.RoboticVacuumCleaner;
+import ru.epam.lesson.homework.hw03.bean.cleaning_device.SteamCleaner;
+import ru.epam.lesson.homework.hw03.bean.cleaning_device.VacuumCleaner;
+import ru.epam.lesson.homework.hw03.bean.cooking_device.CapsularCoffeeMaker;
+import ru.epam.lesson.homework.hw03.bean.cooking_device.CoffeeMachine;
+import ru.epam.lesson.homework.hw03.bean.cooking_device.CoffeeMaker;
+import ru.epam.lesson.homework.hw03.bean.cooking_device.KitchenStove;
+import ru.epam.lesson.homework.hw03.bean.cooking_device.Microwave;
+import ru.epam.lesson.homework.hw03.bean.cooking_device.Multivariate;
+import ru.epam.lesson.homework.hw03.bean.cooking_device.Oven;
+import ru.epam.lesson.homework.hw03.bean.room.Room;
+import ru.epam.lesson.homework.hw03.bean.room.RoomUtility;
 
-/**
- * Таск 3 - Домашние электроприборы
- *
- */
 public class Aggregator 
 {
-	static ArrayList<ElectronicDevice> devices = new ArrayList<>();
-	
-	static
-	{
-		devices.add(new Microwave("nms23", 1200, Brand.SAMSUNG, 8, 800));
-		devices.add(new Oven("qwe1", 2000, Brand.PHILIPS, 20));
-		devices.add(new BreadMaker("11q", 800, Brand.PANASONIC, 1, 300));
-		devices.add(new Washer("n1000", 2200, Brand.SONY, 7, 15));
-		devices.add(new AirConditioning("hj12", 3000, Brand.SONY, 40, 30, 5));
-		devices.add(new AirPurifier("ghgh09", 300, Brand.DELONGHI, 30));
-		devices.add(new CoffeeMachine("123123qwe", 1200, Brand.DELONGHI, 8));
-		devices.add(new CapsularCoffeeMaker("zx01", 700, Brand.PHILIPS, 5));
-		devices.add(new KitchenStove("vbv123", 2300, Brand.HORIZONT, 4));
-		devices.add(new SteamCleaner("fg123", 1500, Brand.SAMSUNG, 6, 150));
-		devices.add(new CoffeeMaker("er99", 800, Brand.PHILIPS, 9));
-		devices.add(new RoboticVacuumCleaner("4545qq", 200, Brand.SONY, 12));
-		devices.add(new VacuumCleaner("asd09", 2000, Brand.HORIZONT, 6));
-	}
+	private static ArrayList<ElectronicDevice> devices = new ArrayList<>();	
 	
 	public static void main(String[] args)
 	{
-		System.out.println("Turning on Electronic Devices:");
-		devices
-		.stream()
-		.forEach(ElectronicDevice :: plugIn);
+		initializeDevices();
+		Room room = new Room(devices, 5000);
 		
-		System.out.println("\nCalculation of power consumption:");		
-		int fullPower = 0;
-		for (ElectronicDevice e : devices)
-		{
-			fullPower += e.getPower();
-		}
-		System.out.println("Full power = " + fullPower);
-		
-		System.out.println("\nSorting by power:");
-		devices
-		.stream()
-		.sorted((o1, o2) -> o1.getPower() - o2.getPower())
+		System.out.println("Sorting by power:");
+		RoomUtility.sortByPower(room);		
+		room.getDevices()
+		.stream()		
 		.forEach((e) -> System.out.println(e.getClass().getSimpleName() + " " + e.getPower()));
 		
-		System.out.println("\nSearching device that has brand = SONY and power > 2000:");
-		devices
+		System.out.println("\nSearching device that has brand = Panasonic and power > 2000:");
+		RoomUtility.searchDevice(room, Brand.PANASONIC, 2000)
 		.stream()
-		.filter(e -> e.getBrand().equals(Brand.SONY))
-		.filter(e -> e.getPower() > 2000)
 		.forEach((e) -> System.out.println(e.getClass().getSimpleName() + " " + e.getBrand() + " " + e.getPower()));
+		
+		System.out.println("\nTurning on several devices:");
+		RoomUtility.turnOnDevice(room, 0, 1, 2);
+		
+		System.out.println("\nTurning another devices:");
+		RoomUtility.turnOnDevice(room, 8, 9);
+		
+		System.out.println("\nTotal power consumption:");
+		System.out.println(room.getUsedPower());
 	}
 	
+	private static void initializeDevices()
+	{
+		devices.add(new AirConditioning("22qwe2", 2200, Brand.PANASONIC, 40, 1000, 35, 5));
+		devices.add(new AirPurifier("456gdfg", 800, Brand.DELONGHI, 20, 400));
+		devices.add(new RoboticVacuumCleaner("dd45w", 500, Brand.SONY, 60, 5, 30));
+		devices.add(new SteamCleaner("fg45", 1600, Brand.PHILIPS, 100, 4, 200));
+		devices.add(new VacuumCleaner("vbvd5", 2100, Brand.PANASONIC, 100, 3));
+		devices.add(new CapsularCoffeeMaker("7876g", 400, Brand.PHILIPS, 200, 5, 3));
+		devices.add(new CoffeeMachine("rt454", 1200, Brand.DELONGHI, 250, 8, true));
+		devices.add(new CoffeeMaker("565fgd4", 900, Brand.DELONGHI, 250, 7));
+		devices.add(new KitchenStove("qwe123", 2200, Brand.HORIZONT, 5000, 4));
+		devices.add(new Microwave("ghj67", 1200, Brand.LG, 2000, 300, 800));
+		devices.add(new Multivariate("cvc23", 100, Brand.HORIZONT, 1500, 300, 12));
+		devices.add(new Oven("234dfd", 2100, Brand.PHILIPS, 4000, 500));
+	}
 	
 }

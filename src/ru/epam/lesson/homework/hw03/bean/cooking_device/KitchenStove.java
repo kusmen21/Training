@@ -1,23 +1,16 @@
-package ru.epam.lesson.homework.hw03.bean.cooking_device.kitchen_stove;
+package ru.epam.lesson.homework.hw03.bean.cooking_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.CookingDevice;
 
 public class KitchenStove extends CookingDevice 
 {
-	protected int burnerCount;
+	private int burnerCount;
 	
-	public KitchenStove(String model, int power, Brand brand, int burnerCount) {
-		super(model, power, brand);
+	public KitchenStove(String model, int power, Brand brand, int maxFoodWeight, int burnerCount) {
+		super(model, power, brand, maxFoodWeight);
 		this.burnerCount = burnerCount;
 	}
 	
-	@Override
-	public void cook() 
-	{		
-		System.out.println("Cooking on Kichen Stove");
-	}
-
 	public int getBurnerCount() {
 		return burnerCount;
 	}
@@ -50,9 +43,11 @@ public class KitchenStove extends CookingDevice
 
 	@Override
 	public String toString() {
-		return "KitchenStove [model=" + model + ", power=" + power + ", brand=" + brand + ", burnerCount=" + burnerCount
-				+ "]";
-	}	
+		return "KitchenStove [burnerCount=" + burnerCount + ", MaxFoodWeight=" + getMaxFoodWeight()
+				+ ", Power=" + getPower() + ", Brand=" + getBrand() + ", Model=" + getModel()
+				+ ", On=" + isOn() + "]";
+	}
+
 	
 	
 }

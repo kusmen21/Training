@@ -1,31 +1,35 @@
-package ru.epam.lesson.homework.hw03.bean.cleaning_device.air_purifier;
+package ru.epam.lesson.homework.hw03.bean.cleaning_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.CleaningDevice;
 
 public class AirPurifier extends CleaningDevice
-{	
-	// размер очищаемой\охлаждаемой области
-	protected int spaceSize;
+{		
+	private int coolingPower;
 	
-	public AirPurifier(String model, int power, Brand brand, int spaceSize) {
-		super(model, power, brand);
-		this.spaceSize = spaceSize;
+	public AirPurifier(String model, int power, Brand brand, int spaceSize, int coolingPower) {
+		super(model, power, brand, spaceSize);
+		this.coolingPower = coolingPower;
 	}
 
-	public int getSpaceSize() {
-		return spaceSize;
+	public int getCoolingPower() {
+		return coolingPower;
 	}
 
-	public void setSpaceSize(int spaceSize) {
-		this.spaceSize = spaceSize;
+	public void setCoolingPower(int spaceSize) {
+		this.coolingPower = spaceSize;
+	}
+
+	@Override
+	public String toString() {
+		return "AirPurifier [coolingPower=" + coolingPower + ", SpaceSize=" + getSpaceSize() + ", Power="
+				+ getPower() + ", Brand=" + getBrand() + ", Model=" + getModel() + ", on=" + isOn() + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + spaceSize;
+		result = prime * result + coolingPower;
 		return result;
 	}
 
@@ -38,17 +42,10 @@ public class AirPurifier extends CleaningDevice
 		if (getClass() != obj.getClass())
 			return false;
 		AirPurifier other = (AirPurifier) obj;
-		if (spaceSize != other.spaceSize)
+		if (coolingPower != other.coolingPower)
 			return false;
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "AirPurifier [model=" + model + ", power=" + power + ", brand=" + brand + ", spaceSize=" + spaceSize
-				+ "]";
-	}
-	
-	
 	
 }

@@ -2,9 +2,7 @@ package ru.epam.lesson.homework.hw02;
 
 import java.util.Arrays;
 
-/**
- * класс для тестирования методов сортировки 
- **/
+
 public class Aggregator 
 {
 	public static void main(String[] args)

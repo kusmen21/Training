@@ -1,40 +1,29 @@
-package ru.epam.lesson.homework.hw03.bean.cooking_device.oven;
+package ru.epam.lesson.homework.hw03.bean.cooking_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.CookingDevice;
 
 public class Oven extends CookingDevice
 {
-	protected int maxFoodWeight;
+	private int maxTemperature;
 	
-	public Oven(String model, int power, Brand brand, int maxFoodWeight) {
-		super(model, power, brand);
-		this.maxFoodWeight = maxFoodWeight;
-	}	
-	
-	@Override
-	public void cook() {
-		System.out.println("Cooking in Oven");
-	}
-	
-	public void bake()
-	{
-		System.out.println("Baking in Oven");
+	public Oven(String model, int power, Brand brand, int maxFoodWeight, int maxTemperature) {
+		super(model, power, brand, maxFoodWeight);
+		this.maxTemperature = maxTemperature;
 	}
 
-	public int getMaxFoodWeight() {
-		return maxFoodWeight;
+	public int getMaxTemperature() {
+		return maxTemperature;
 	}
 
-	public void setMaxFoodWeight(int maxFoodWeight) {
-		this.maxFoodWeight = maxFoodWeight;
+	public void setMaxTemperature(int maxTemperature) {
+		this.maxTemperature = maxTemperature;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + maxFoodWeight;
+		result = prime * result + maxTemperature;
 		return result;
 	}
 
@@ -47,15 +36,17 @@ public class Oven extends CookingDevice
 		if (getClass() != obj.getClass())
 			return false;
 		Oven other = (Oven) obj;
-		if (maxFoodWeight != other.maxFoodWeight)
+		if (maxTemperature != other.maxTemperature)
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Oven [model=" + model + ", power=" + power + ", brand=" + brand + ", maxFoodWeight=" + maxFoodWeight
-				+ "]";
-	}
+		return "Oven [maxTemperature=" + maxTemperature + ", MaxFoodWeight=" + getMaxFoodWeight() + ", Power="
+				+ getPower() + ", Brand=" + getBrand() + ", Model=" + getModel() + ", On=" + isOn() + "]";
+	}	
+	
+
 	
 }

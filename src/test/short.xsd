@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.epam.tr.com/short"
+xmlns:tns="http://www.epam.tr.com/short">
+
+    <element name="treasures">
+        <complexType>
+            <sequence>
+                <element name="bow" type="tns:bow"
+                         minOccurs="1" maxOccurs="unbounded"/>
+                <element name="helmet" type="tns:helmet"
+                         minOccurs="1"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="bow">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="type" type="string"/>
+            <element name="size" type="double"/>
+            <element name="arrow_type" type="string"/>
+            <element name="arrow_count" type="int"/>
+            <element name="damage" type="int"/>
+            <element name="price" type="int"/>
+        </sequence>
+        <attribute name="id" type="int" use="required"/>
+    </complexType>
+    <complexType name="helmet">
+        <sequence>
+            <element name="title" type="string"/>
+            <element name="type" type="string"/>
+            <element name="material" type="string"/>
+            <element name="head_protection" type="int"/>
+            <element name="head_circumference" type="int"/>
+            <element name="price" type="int"/>
+        </sequence>
+        <attribute name="id" type="int" use="required"/>
+    </complexType>
+
+</schema>

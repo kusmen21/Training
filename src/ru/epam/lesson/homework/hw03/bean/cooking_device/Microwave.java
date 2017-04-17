@@ -1,23 +1,16 @@
-package ru.epam.lesson.homework.hw03.bean.cooking_device.oven.microwave;
+package ru.epam.lesson.homework.hw03.bean.cooking_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.oven.Oven;
 
 public class Microwave extends Oven
-{	
-	// мощность микроволн
-	protected int microwavePower;
+{		
+	private int microwavePower;
 	
-	public Microwave(String model, int power, Brand brand, int maxFoodWeight, int microwavePower) {
-		super(model, power, brand, maxFoodWeight);
+	public Microwave(String model, int power, Brand brand, int maxFoodWeight, int maxTemperature, int microwavePower) {
+		super(model, power, brand, maxFoodWeight, maxTemperature);
 		this.microwavePower = microwavePower;
 	}
 	
-	public void reheatFood()
-	{
-		System.out.println("Reheating food in Microvawe Oven");
-	}
-
 	public int getMicrovawePower() {
 		return microwavePower;
 	}
@@ -50,8 +43,11 @@ public class Microwave extends Oven
 
 	@Override
 	public String toString() {
-		return "Microwave [maxFoodWeight=" + maxFoodWeight + ", model=" + model + ", power=" + power + ", brand="
-				+ brand + ", microwavePower=" + microwavePower + "]";
+		return "Microwave [microwavePower=" + microwavePower + ", MaxTemperature=" + getMaxTemperature()
+				+ ", MaxFoodWeight=" + getMaxFoodWeight() + ", Power=" + getPower() + ", Brand="
+				+ getBrand() + ", Model=" + getModel() + ", On=" + isOn() + "]";
 	}
+
+	
 	
 }

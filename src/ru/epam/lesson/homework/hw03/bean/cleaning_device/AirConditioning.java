@@ -1,23 +1,17 @@
-package ru.epam.lesson.homework.hw03.bean.cleaning_device.air_purifier.air_conditioning;
+package ru.epam.lesson.homework.hw03.bean.cleaning_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.air_purifier.AirPurifier;
 
 public class AirConditioning extends AirPurifier
 {	
-	protected int maxTemperature;
-	protected int minTemperature;
+	private int maxTemperature;
+	private int minTemperature;
 	
-	public AirConditioning(String model, int power, Brand brand, int spaceSize, int max, int min) {
-		super(model, power, brand, spaceSize);
+	public AirConditioning(String model, int power, Brand brand, int spaceSize, int coolingPower, int max, int min) {
+		super(model, power, brand, spaceSize, coolingPower);
 		this.maxTemperature = max;
 		this.minTemperature = min;
-	}
-	
-	public void conditioning()
-	{
-		System.out.println("Conditioning");
-	}
+	}	
 
 	public int getMaxTemperature() {
 		return maxTemperature;
@@ -33,6 +27,13 @@ public class AirConditioning extends AirPurifier
 
 	public void setMinTemperature(int minTemperature) {
 		this.minTemperature = minTemperature;
+	}
+
+	@Override
+	public String toString() {
+		return "AirConditioning [maxTemperature=" + maxTemperature + ", minTemperature=" + minTemperature
+				+ ", CoolingPower=" + getCoolingPower() + ", SpaceSize=" + getSpaceSize() + ", Power="
+				+ getPower() + ", Brand=" + getBrand() + ", Model=" + getModel() + ", on=" + isOn() + "]";
 	}
 
 	@Override
@@ -60,12 +61,6 @@ public class AirConditioning extends AirPurifier
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "AirConditioning [spaceSize=" + spaceSize + ", model=" + model + ", power=" + power + ", brand=" + brand
-				+ ", maxTemperature=" + maxTemperature + ", minTemperature=" + minTemperature + "]";
-	}
-	
-	
-	
+
+
 }

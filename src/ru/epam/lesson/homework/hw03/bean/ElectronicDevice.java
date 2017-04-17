@@ -2,21 +2,18 @@ package ru.epam.lesson.homework.hw03.bean;
 
 import ru.epam.lesson.homework.hw03.Brand;
 
-public class ElectronicDevice 
+public abstract class ElectronicDevice 
 {
-	protected String model;
-	protected int power;
-	protected Brand brand;
+	private String model;
+	private int power;
+	private Brand brand;
+	private boolean on;
 	
 	public ElectronicDevice(String model, int power, Brand brand) {		
 		this.model = model;
 		this.power = power;
 		this.brand = brand;
-	}
-
-	public void plugIn()
-	{
-		System.out.println(getClass().getSimpleName() + " was Plugged in!");
+		on = false;
 	}
 
 	public int getPower() {
@@ -43,12 +40,21 @@ public class ElectronicDevice
 		this.model = model;
 	}
 
+	public boolean isOn() {
+		return on;
+	}
+
+	public void setOn(boolean on) {
+		this.on = on;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((brand == null) ? 0 : brand.hashCode());
 		result = prime * result + ((model == null) ? 0 : model.hashCode());
+		result = prime * result + (on ? 1231 : 1237);
 		result = prime * result + power;
 		return result;
 	}
@@ -69,6 +75,8 @@ public class ElectronicDevice
 				return false;
 		} else if (!model.equals(other.model))
 			return false;
+		if (on != other.on)
+			return false;
 		if (power != other.power)
 			return false;
 		return true;
@@ -76,6 +84,8 @@ public class ElectronicDevice
 
 	@Override
 	public String toString() {
-		return "ElectronicDevice [model=" + model + ", power=" + power + ", brand=" + brand + "]";
+		return "ElectronicDevice [model=" + model + ", power=" + power + ", brand=" + brand + ", on=" + on + "]";
 	}
+
+
 }

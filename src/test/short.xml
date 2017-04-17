@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tc:treasures xmlns:tc="http://www.epam.tr.com/short"
+			  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			  xsi:schemaLocation="http://www.epam.tr.com/short ">
+	<bow id="181">
+		<title>English bow</title>
+		<type>Long bow</type>
+		<size>0.75</size>
+		<arrow_type>traditional</arrow_type>
+		<arrow_count>30</arrow_count>
+		<damage>15</damage>
+		<price>500</price>
+	</bow>
+	<bow id="182">
+		<title>Russian bow</title>
+		<type>Short bow</type>
+		<size>0.4</size>
+		<arrow_type>modern</arrow_type>
+		<arrow_count>50</arrow_count>
+		<damage>10</damage>
+		<price>450</price>
+	</bow>
+	<bow id="183">
+		<title>German bow</title>
+		<type>Composite bow</type>
+		<size>0.7</size>
+		<arrow_type>long</arrow_type>
+		<arrow_count>20</arrow_count>
+		<damage>20</damage>
+		<price>800</price>
+	</bow>
+	<helmet id = "191">
+		<title>Attic</title>
+		<type>ancient helmet</type>
+		<material>steel</material>
+		<head_protection>50</head_protection>
+		<head_circumference>40</head_circumference>
+		<price>500</price>
+	</helmet>
+	<helmet id = "192">
+		<title>M1</title>
+		<type>world war helmet</type>
+		<material>steel</material>
+		<head_protection>100</head_protection>
+		<head_circumference>42</head_circumference>
+		<price>200</price>
+	</helmet>
+	<helmet id = "193">
+		<title>Bell</title>
+		<type>bike helmet</type>
+		<material>polyurethane</material>
+		<head_protection>20</head_protection>
+		<head_circumference>38</head_circumference>
+		<price>100</price>
+	</helmet>
+</tc:treasures>

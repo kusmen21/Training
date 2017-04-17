@@ -1,38 +1,53 @@
-package ru.epam.lesson.homework.hw03.bean.cooking_device.coffee_maker.coffee_machine;
+package ru.epam.lesson.homework.hw03.bean.cooking_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cooking_device.coffee_maker.CoffeeMaker;
 
 public class CoffeeMachine extends CoffeeMaker
 {	
-	
-	public CoffeeMachine(String model, int power, Brand brand, int pressure) {
-		super(model, power, brand, pressure);		
+	private boolean automatic;
+
+	public CoffeeMachine(String model, int power, Brand brand, int maxFoodWeight, int pressure, boolean automatic) {
+		super(model, power, brand, maxFoodWeight, pressure);
+		this.automatic = automatic;
 	}
 
-	public void doCappucino() 
-	{		
-		System.out.println("Doing Cappucino on Coffee Machine");
-	}	
-	
-	public void doLatte() 
-	{		
-		System.out.println("Doing Latte on Coffee Machine");
-	}	
-	
-	@Override	
-	public boolean equals(Object obj) {
-		return super.equals(obj);
+	public boolean isAutomatic() {
+		return automatic;
 	}
-	
+
+	public void setAutomatic(boolean automatic) {
+		this.automatic = automatic;
+	}
+
 	@Override
 	public int hashCode() {
-		return super.hashCode();
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + (automatic ? 1231 : 1237);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CoffeeMachine other = (CoffeeMachine) obj;
+		if (automatic != other.automatic)
+			return false;
+		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "CoffeeMachine [model=" + model + ", power=" + power + ", brand=" + brand + ", pressure="
-				+ pressure + "]";
+		return "CoffeeMachine [automatic=" + automatic + ", Pressure=" + getPressure() + ", MaxFoodWeight="
+				+ getMaxFoodWeight() + ", Power=" + getPower() + ", Brand=" + getBrand() + ", Model="
+				+ getModel() + ", On=" + isOn() + "]";
 	}
+
+	
+	
 }

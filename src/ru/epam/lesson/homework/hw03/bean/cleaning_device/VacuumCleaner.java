@@ -1,21 +1,15 @@
-package ru.epam.lesson.homework.hw03.bean.cleaning_device.vacuum_cleaner;
+package ru.epam.lesson.homework.hw03.bean.cleaning_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.CleaningDevice;
 
 public class VacuumCleaner extends CleaningDevice
 {	
-	protected int programCount;
+	private int programCount;
 	
-	public VacuumCleaner(String model, int power, Brand brand, int programCount) {
-		super(model, power, brand);
+	public VacuumCleaner(String model, int power, Brand brand, int spaceSize, int programCount) {
+		super(model, power, brand, spaceSize);
 		this.programCount = programCount;
-	}
-	
-	public void cleanFloor()
-	{
-		System.out.println("Cleaning Floor");
-	}
+	}	
 
 	public int getProgramCount() {
 		return programCount;
@@ -23,6 +17,12 @@ public class VacuumCleaner extends CleaningDevice
 
 	public void setProgramCount(int programCount) {
 		this.programCount = programCount;
+	}
+
+	@Override
+	public String toString() {
+		return "VacuumCleaner [programCount=" + programCount + ", SpaceSize=" + getSpaceSize() + ", Power="
+				+ getPower() + ", Brand=" + getBrand() + ", Model=" + getModel() + ", on=" + isOn() + "]";
 	}
 
 	@Override
@@ -47,10 +47,5 @@ public class VacuumCleaner extends CleaningDevice
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "VacuumCleaner [model=" + model + ", power=" + power + ", brand=" + brand + ", programCount="
-				+ programCount + "]";
-	}
 	
 }

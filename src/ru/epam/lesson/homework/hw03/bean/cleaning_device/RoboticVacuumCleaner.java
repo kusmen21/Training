@@ -1,34 +1,52 @@
-package ru.epam.lesson.homework.hw03.bean.cleaning_device.vacuum_cleaner.robotic_vacuum_cleaner;
+package ru.epam.lesson.homework.hw03.bean.cleaning_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.vacuum_cleaner.VacuumCleaner;
 
 public class RoboticVacuumCleaner extends VacuumCleaner
 {
-	public RoboticVacuumCleaner(String model, int power, Brand brand, int programCount) {
-		super(model, power, brand, programCount);		
+	private int maxCleaningTime;
+	
+	public RoboticVacuumCleaner(String model, int power, Brand brand, int spaceSize, int programCount, int maxCleaningTime) {
+		super(model, power, brand, spaceSize, programCount);
+		this.maxCleaningTime = maxCleaningTime;
 	}
 
-	public void autoCleanFloor()
-	{
-		System.out.println("Auto Cleaning Floor");
+	public int getMaxCleaningTime() {
+		return maxCleaningTime;
 	}
-	
-	@Override	
-	public boolean equals(Object obj) {
-		return super.equals(obj);
-	}
-	
-	@Override
-	public int hashCode() {
-		return super.hashCode();
+
+	public void setMaxCleaningTime(int maxCleaningTime) {
+		this.maxCleaningTime = maxCleaningTime;
 	}
 
 	@Override
 	public String toString() {
-		return "RoboticVacuumCleaner [programCount=" + programCount + ", model=" + model + ", power=" + power
-				+ ", brand=" + brand + "]";
+		return "RoboticVacuumCleaner [maxCleaningTime=" + maxCleaningTime + ", ProgramCount=" + getProgramCount()
+				+ ", SpaceSize=" + getSpaceSize() + ", Power=" + getPower() + ", Brand=" + getBrand()
+				+ ", Model=" + getModel() + ", on=" + isOn() + "]";
 	}
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + maxCleaningTime;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		RoboticVacuumCleaner other = (RoboticVacuumCleaner) obj;
+		if (maxCleaningTime != other.maxCleaningTime)
+			return false;
+		return true;
+	}
+
 	
 }

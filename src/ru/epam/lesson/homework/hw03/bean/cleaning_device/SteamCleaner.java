@@ -1,14 +1,13 @@
-package ru.epam.lesson.homework.hw03.bean.cleaning_device.vacuum_cleaner.steam_cleaner;
+package ru.epam.lesson.homework.hw03.bean.cleaning_device;
 
 import ru.epam.lesson.homework.hw03.Brand;
-import ru.epam.lesson.homework.hw03.bean.cleaning_device.vacuum_cleaner.VacuumCleaner;
 
 public class SteamCleaner extends VacuumCleaner
 {	
-	protected int maxSteamTemperature;
+	private int maxSteamTemperature;
 	
-	public SteamCleaner(String model, int power, Brand brand, int programCount, int maxSteamTemperature) {
-		super(model, power, brand, programCount);
+	public SteamCleaner(String model, int power, Brand brand, int spaceSize, int programCount, int maxSteamTemperature) {
+		super(model, power, brand, spaceSize, programCount);
 		this.maxSteamTemperature = maxSteamTemperature;
 	}
 
@@ -18,6 +17,13 @@ public class SteamCleaner extends VacuumCleaner
 
 	public void setMaxSteamTemperature(int maxSteamTemperature) {
 		this.maxSteamTemperature = maxSteamTemperature;
+	}
+
+	@Override
+	public String toString() {
+		return "SteamCleaner [maxSteamTemperature=" + maxSteamTemperature + ", ProgramCount=" + getProgramCount()
+				+ ", SpaceSize=" + getSpaceSize() + ", Power=" + getPower() + ", Brand=" + getBrand()
+				+ ", Model=" + getModel() + ", on=" + isOn() + "]";
 	}
 
 	@Override
@@ -42,11 +48,5 @@ public class SteamCleaner extends VacuumCleaner
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "SteamCleaner [programCount=" + programCount + ", model=" + model + ", power=" + power + ", brand="
-				+ brand + ", maxSteamTemperature=" + maxSteamTemperature + "]";
-	}
-	
 	
 }

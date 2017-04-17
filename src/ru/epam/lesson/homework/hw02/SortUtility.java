@@ -1,8 +1,9 @@
 package ru.epam.lesson.homework.hw02;
 
-public class SortUtility 
+public final class SortUtility 
 {
-	// сортировка прямым выбором	
+	private SortUtility(){}	
+	
 	public static void selectionSort (int[] array){
 	    int min, temp;
 
@@ -19,7 +20,7 @@ public class SortUtility
 	    }
 	}
 	
-	// сортировка прямой вставкой	
+		
 	public static void insertionSort(int[] array) {
 	    int temp, j;
 	    for(int i = 0; i < array.length - 1; i++){
@@ -34,9 +35,8 @@ public class SortUtility
 	           array[j] = temp;             
 	        }        
 	    }
-	}
+	}	
 	
-	// сортировка пузырьком	
 	public static void bubbleSort(int[] array) {
         for (int i = array.length - 1; i >= 0; i--) {
             for (int j = 0; j < i; j++) {
@@ -47,9 +47,8 @@ public class SortUtility
                 }
             }
         }
-	}
-	
-	// Quick Sort
+	}	
+
 	public static void quickSort(int[] array)
 	{
 		doQuickSort(array, 0, array.length - 1);
@@ -71,7 +70,11 @@ public class SortUtility
 	         }
 	      } while(i <= j);
 	      
-	      if(low < j) doQuickSort(array, low, j);
-	      if(i < high) doQuickSort(array, i, high);
+	      if(low < j) {
+	    	  doQuickSort(array, low, j);
+	      }
+	      if(i < high) {
+	    	  doQuickSort(array, i, high);
+	      }
 	  }
 }
